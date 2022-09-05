@@ -4,10 +4,10 @@ visibility: PRIVATE
 
 # TODO: Repo Initialization
 
-- [ ] Fetch the report tooling by running `git submodule update --init --recursive`
-- [ ] Rename the directory `QN`, replacing `N` with the current quarter
-- [ ] Rename the directory `YYYY`, replacing `YYYY` with the current year
-- [ ] Make the following replacements in this file:
+- [X] Fetch the report tooling by running `git submodule update --init --recursive`
+- [X] Rename the directory `QN`, replacing `N` with the current quarter
+- [X] Rename the directory `YYYY`, replacing `YYYY` with the current year
+- [X] Make the following replacements in this file:
   - `$CLIENT$` -> clients name
   - `$client-url$` -> client's home page
 - [ ] Initialize the report skeleton
@@ -20,11 +20,11 @@ visibility: PRIVATE
 - [ ] Remove this section
 - [ ] Invite the client team members to this repo
 
-#  Audit Workspace _of_ Informal Systems ⨯ $CLIENT$
+#  Audit Workspace _of_ Informal Systems ⨯ Osmosis
 
 This repository is a workspace for [Informal Systems](https://informal.systems/)
-and [$CLIENT$]($client-url$) to collaborate on auditing the software developed
-by $CLIENT$.
+and [Osmosis](https://docs.osmosis.zone/) to collaborate on auditing the software developed
+by Osmosis.
 
 ## Usage and organization
 
@@ -39,13 +39,13 @@ These artifacts include:
 ### To clone just the artifacts Informal created during the audit
 
 ``` sh
-git clone git@github.com:informalsystems/audit-$CLIENT$.git
+git clone git@github.com:informalsystems/partnership-osmosis.git
 ```
 
 ### To clone all artifacts, including Interlay's source code at the relevant commits
 
 ``` sh
-git clone --recurse-submodules git@github.com:informalsystems/audit-$CLIENT$.git
+git clone --recurse-submodules git@github.com:informalsystems/partnership-osmosis.git
 ```
 
 
