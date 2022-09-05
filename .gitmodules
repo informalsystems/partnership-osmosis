@@ -4,3 +4,6 @@
 [submodule "2022/Q3/artifacts/cosmos-sdk"]
 	path = 2022/Q3/artifacts/cosmos-sdk
 	url = https://github.com/osmosis-labs/cosmos-sdk
+[submodule "2022/Q3/artifacts/osmosis"]
+	path = 2022/Q3/artifacts/osmosis
+	url = https://github.com/osmosis-labs/osmosis.git
