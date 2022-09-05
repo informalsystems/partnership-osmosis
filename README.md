@@ -1,24 +1,7 @@
 ---
-visibility: PRIVATE
+visibility: PUBLIC
 ---
 
-# TODO: Repo Initialization
-
-- [X] Fetch the report tooling by running `git submodule update --init --recursive`
-- [X] Rename the directory `QN`, replacing `N` with the current quarter
-- [X] Rename the directory `YYYY`, replacing `YYYY` with the current year
-- [X] Make the following replacements in this file:
-  - `$CLIENT$` -> clients name
-  - `$client-url$` -> client's home page
-- [X] Initialize the report skeleton
-  ```sh
-  cd YYYY/QN/report
-  make init
-  ```
-- [ ] Add client artifacts to the `artifacts` subdirectory, using the instructions
-  in the final section below.
-- [ ] Remove this section
-- [ ] Invite the client team members to this repo
 
 #  Audit Workspace _of_ Informal Systems ⨯ Osmosis
 
