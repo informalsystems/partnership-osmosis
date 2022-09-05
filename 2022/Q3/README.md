@@ -11,9 +11,9 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 
 #  Deliverables:
 
- - **Diagrams** created for analysis of the Before Send Hook impact, located in folder [diagrams](https://github.com/informalsystems/partnership-osmosis/tree/trunk/2022/Q3/diagrams)
+ **Diagrams** created for analysis of the Before Send Hook impact, located in folder [diagrams](https://github.com/informalsystems/partnership-osmosis/tree/trunk/2022/Q3/diagrams)
 
- - **Issues** reported on Osmosis Lab github repositories: 
+ **Issues** reported on Osmosis Lab github repositories: 
  -  BeforeSend Hook impact analysis on the Distribution module [#319](https://github.com/osmosis-labs/cosmos-sdk/issues/319)
  -  Impact of BeforeSend hook on Distribution module - FeePool.CommunityPool distribution [#322](https://github.com/osmosis-labs/cosmos-sdk/issues/322)
  -  BeforeSend Hook impact analysis on the Incentives module [#2572](https://github.com/osmosis-labs/osmosis/issues/2572)
@@ -21,7 +21,7 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
  -  Analysis of BeforeSend hook impact on Cosmos SDK Core modules [#320](https://github.com/osmosis-labs/cosmos-sdk/issues/320)
  -  Design analysis of BeforeSend hook implementation in x/TokenFactory [#2567](https://github.com/osmosis-labs/osmosis/issues/2567)
  -  Define x/TokenFactory BeforeSend hook sentinel error [#2570](https://github.com/osmosis-labs/osmosis/issues/2570)
- - **TODO** add issues for osmosis modules impact, ibc and wasmbinding impact - once reported!
+ - **TODO:** add issues for osmosis modules impact, ibc and wasmbinding impact - once reported!
  
  
 
