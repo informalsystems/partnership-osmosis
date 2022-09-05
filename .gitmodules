@@ -1,3 +1,6 @@
 [submodule ".audit-report"]
 	path = .audit-report
 	url = git@github.com:informalsystems/audit-reports.git
+[submodule "2022/Q3/artifacts/cosmos-sdk"]
+	path = 2022/Q3/artifacts/cosmos-sdk
+	url = https://github.com/osmosis-labs/cosmos-sdk
