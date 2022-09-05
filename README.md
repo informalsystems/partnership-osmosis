@@ -10,7 +10,7 @@ visibility: PRIVATE
 - [X] Make the following replacements in this file:
   - `$CLIENT$` -> clients name
   - `$client-url$` -> client's home page
-- [ ] Initialize the report skeleton
+- [X] Initialize the report skeleton
   ```sh
   cd YYYY/QN/report
   make init
@@ -60,7 +60,7 @@ git submodule update --init --recursive
 From within an the `artifacts` subdirectory of an audit:
 
 ```sh
-git submodule add https://github.com/$CLIENT$/$PROJECT$
+git submodule add https://github.com/osmosis/$PROJECT$
 cd $PROJECT$
 git checkout $TAG$
 ```
