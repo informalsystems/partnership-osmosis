@@ -21,7 +21,8 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
  -  Analysis of BeforeSend hook impact on Cosmos SDK Core modules [#320](https://github.com/osmosis-labs/cosmos-sdk/issues/320)
  -  Design analysis of BeforeSend hook implementation in x/TokenFactory [#2567](https://github.com/osmosis-labs/osmosis/issues/2567)
  -  Define x/TokenFactory BeforeSend hook sentinel error [#2570](https://github.com/osmosis-labs/osmosis/issues/2570)
- - **TODO:** add issues for osmosis modules impact, ibc and wasmbinding impact - once reported!
+ -  Analysis of BeforeSend hook impact on Osmosis modules [#2613](https://github.com/osmosis-labs/osmosis/issues/2613) 
+ - **TODO:** add issues for ibc and wasmbinding impact - once reported!
  
  
 
