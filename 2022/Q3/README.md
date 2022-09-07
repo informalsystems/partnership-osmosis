@@ -23,7 +23,7 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
  -  Define x/TokenFactory BeforeSend hook sentinel error [#2570](https://github.com/osmosis-labs/osmosis/issues/2570)
  -  Analysis of BeforeSend hook impact on Osmosis modules [#2613](https://github.com/osmosis-labs/osmosis/issues/2613) 
  -  Impact analysis of Before Send Hook on Osmosis wasmbinding [#2629](https://github.com/osmosis-labs/osmosis/issues/2629)
- - **TODO:** add issues for ibc impact - once reported!
+ -  Full token factory Before Send Hook impact on IBC [#2633](https://github.com/osmosis-labs/osmosis/issues/2633)
  
  
 
