@@ -25,6 +25,8 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
  -  Impact analysis of Before Send Hook on Osmosis wasmbinding [#2629](https://github.com/osmosis-labs/osmosis/issues/2629)
  -  Full token factory Before Send Hook impact on IBC [#2633](https://github.com/osmosis-labs/osmosis/issues/2633)
  -  Impact of Before Send Hook on BurnFrom and ForceTransfer [#2717](https://github.com/osmosis-labs/osmosis/issues/2717)
+ -  BurnFrom and ForceTransfer impact on Cosmos SDK Core modules [#329](https://github.com/osmosis-labs/cosmos-sdk/issues/329)
+ -  BurnFrom and ForceTransfer impact on Osmosis modules [#2779](https://github.com/osmosis-labs/osmosis/issues/2779) 
  
  
 
