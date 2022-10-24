@@ -7,3 +7,6 @@
 [submodule "2022/Q3/artifacts/osmosis"]
 	path = 2022/Q3/artifacts/osmosis
 	url = https://github.com/osmosis-labs/osmosis.git
+[submodule "2022/Q4/artifacts/TWAP-Balancer/osmosis"]
+	path = 2022/Q4/artifacts/TWAP-Balancer/osmosis
+	url = https://github.com/osmosis-labs/osmosis.git
