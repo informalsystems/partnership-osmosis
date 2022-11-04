@@ -13,6 +13,7 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 
  **PRs**
  - TWAP spec and code comments improvements [#3216](https://github.com/osmosis-labs/osmosis/pull/3216)
+ - TWAP code improvements [#3231](https://github.com/osmosis-labs/osmosis/pull/3231)
  
  **Issues** reported on Osmosis Lab github repositories:
  
