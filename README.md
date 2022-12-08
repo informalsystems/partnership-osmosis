@@ -25,7 +25,7 @@ These artifacts include:
 git clone git@github.com:informalsystems/partnership-osmosis.git
 ```
 
-### To clone all artifacts, including Interlay's source code at the relevant commits
+### To clone all artifacts, including Osmosis source code at the relevant commits
 
 ``` sh
 git clone --recurse-submodules git@github.com:informalsystems/partnership-osmosis.git
