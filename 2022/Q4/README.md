@@ -28,6 +28,7 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 - *TODO: short explanation, links*
 
 **Issues** reported on Osmosis Lab github repositories:
+- ValidateFutureGovernor() needs some polishing [#3664](https://github.com/osmosis-labs/osmosis/issues/3664)
  
  
 
