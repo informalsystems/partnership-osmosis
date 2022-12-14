@@ -20,6 +20,8 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 **GAMM module & Balancer style pools**
  - GAMM module spec improvements [#3654 ](https://github.com/osmosis-labs/osmosis/pull/3654)
  - Gamm code improvements [#3657](https://github.com/osmosis-labs/osmosis/pull/3657)
+ - x/gamm module minor code improvements [#3704](https://github.com/osmosis-labs/osmosis/pull/3704) 
+ 
  
 **TLA Spec for GAMM module**
 - *TODO: explain what is modeled with TLA spec, links*
@@ -29,7 +31,9 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 
 **Issues** reported on Osmosis Lab github repositories:
 - ValidateFutureGovernor() needs some polishing [#3664](https://github.com/osmosis-labs/osmosis/issues/3664)
- 
+- JoinPoolNoSwap contains diff in calculation of the expected shares out and calculated shares out [#3705](https://github.com/osmosis-labs/osmosis/issues/3705)
+- GAMM module and balancer pool model spec improvements [#3706](https://github.com/osmosis-labs/osmosis/issues/3706)
+
  
 
  
