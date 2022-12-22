@@ -24,15 +24,18 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
  
  
 **TLA Spec for GAMM module**
-- *TODO: explain what is modeled with TLA spec, links*
+- TLA spec is created for balancer pool model type and it is modeling CreatePool, JoinPool, ExitPool and SwapExactAmountOut and SwapExactAmountIn transactions.
+- Specification is located under [models folder](https://github.com/informalsystems/OsmosisAtomkraft/tree/0f1363ce2dd3eca7b77e8fd09977741d4258056e/models) in osmosis-atomkraft submodule pointing to OsmosisAtomkraft version used during auditing of GAMM module.
+
  
 **Osmosis Atomkraft**
-- *TODO: short explanation, links*
+- OsmosisAtomkraft is Informal Systems' in house build tool used during audits to help auditors find issues with generating and executing large number of apalache traces that could be executed on running chain. For more details check out our [atomkraft](https://github.com/informalsystems/atomkraft) repository and documentation.
 
 **Issues** reported on Osmosis Lab github repositories:
 - ValidateFutureGovernor() needs some polishing [#3664](https://github.com/osmosis-labs/osmosis/issues/3664)
 - JoinPoolNoSwap contains diff in calculation of the expected shares out and calculated shares out [#3705](https://github.com/osmosis-labs/osmosis/issues/3705)
-- GAMM module and balancer pool model spec improvements [#3706](https://github.com/osmosis-labs/osmosis/issues/3706)
+-  GAMM module and pool models' spec improvements [#3706](https://github.com/osmosis-labs/osmosis/issues/3706)
+-  x/gamm: define gas fee for stableswap pool swap computations [#3837](https://github.com/osmosis-labs/osmosis/issues/3837)
 - Atomkraft findings:
   - x/gamm: Exiting balancer pool with zero assets and low share [#3828](https://github.com/osmosis-labs/osmosis/issues/3828)
   - x/gamm: Panics in SwapExactAmountOut and SwapExactAmountIn for balancer pool[#3829](https://github.com/osmosis-labs/osmosis/issues/3829)
