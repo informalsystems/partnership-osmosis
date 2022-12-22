@@ -1,0 +1,16 @@
+[Tx CMD]: osmosisd tx gamm create-pool --pool-file pool-file-config.json --from A --broadcast-mode block --gas 500000 -y --keyring-backend test --home /osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+[Tx CMD]: osmosisd tx gamm swap-exact-amount-in 2uatom 5 --swap-route-pool-ids 1 --swap-route-denoms ujuno --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+[Tx CMD]: osmosisd tx gamm exit-pool --min-amounts-out 1ujuno --min-amounts-out 1uatom --share-amount-in 25000000000000000000 --pool-id 1 --from A --broadcast-mode block --gas 500000 -y --keyring-backend test --home /osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+[Tx CMD]: osmosisd tx gamm create-pool --pool-file pool-file-config.json --from A --broadcast-mode block --gas 500000 -y --keyring-backend test --home /osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+
+[Tx CMD]: osmosisd tx gamm create-pool --pool-file pool-file-config.json --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-16/test_scenarios_scenario170/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+[Tx CMD]: osmosisd tx gamm swap-exact-amount-in 10ujuno 3 --swap-route-pool-ids 1 --swap-route-denoms uatom --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+[Tx CMD]: osmosisd tx gamm exit-pool --min-amounts-out 0uosmo --min-amounts-out 0uatom --share-amount-in 1 --pool-id 3 --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+
+[Tx CMD]: osmosisd tx gamm swap-exact-amount-out 1uosmo 2 --swap-route-pool-ids 3 --swap-route-denoms uatom --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
