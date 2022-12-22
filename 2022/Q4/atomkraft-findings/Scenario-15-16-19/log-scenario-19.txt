@@ -1,0 +1,176 @@
+INFO     root:mp_gamm.py:118 [Step]: init
+INFO     root:mp_gamm.py:126 	[Status]: Testnet launched...
+
+INFO     root:mp_gamm.py:157 [Step]: create pool
+INFO     root:mp_gamm.py:186 {'tag': 'CreatePool', 'value': {'amounts': {'uatom': 2, 'ujuno': 50000000000000000000}, 'sender': 'C', 'weights': {'uatom': 1, 'ujuno': 1}}}
+INFO     root:mp_gamm.py:187 {'tag': 'CreatePool', 'value': {'id': 1}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm create-pool --pool-file /tmp/pytest-of-mirel/pytest-5/test_scenarios_scenario190/osmosisd/pool-files/pool-file-config.json --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-5/test_scenarios_scenario190/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+INFO     root:mp_gamm.py:101 	[Pool status]: {'@type': '/osmosis.gamm.v1beta1.Pool', 'address': 'osmo1mw0ac6rwlp5r8wapwk3zs6g29h8fcscxqakdzw9emkne6c8wjp9q0t3v8t', 'id': '1', 'pool_params': {'swap_fee': '0.000000000000000000', 'exit_fee': '0.000000000000000000', 'smooth_weight_change_params': None}, 'future_pool_governor': '', 'total_shares': {'denom': 'gamm/pool/1', 'amount': '100000000000000000000'}, 'pool_assets': [{'token': {'denom': 'uatom', 'amount': '2'}, 'weight': '1073741824'}, {'token': {'denom': 'ujuno', 'amount': '50000000000000000000'}, 'weight': '1073741824'}], 'total_weight': '2147483648'}
+INFO     root:mp_gamm.py:228 {'amounts': {'uatom': 2, 'ujuno': 50000000000000000000}, 'exit_fee': 0, 'id': 1, 'share': 100000000000000000000, 'swap_fee': 0, 'weights': {'uatom': 1, 'ujuno': 1}}
+INFO     root:mp_gamm.py:365 [Step]: swap in amount
+INFO     root:mp_gamm.py:368 Old balance of B: [{'denom': 'uatom', 'amount': '50000000000000000000'}, {'denom': 'ujuno', 'amount': '50000000000000000000'}, {'denom': 'uosmo', 'amount': '50000000000000000000'}]
+INFO     root:mp_gamm.py:373 {'tag': 'SwapInAmount', 'value': {'amount_in': 11111111111111111111, 'denom_in': 'uatom', 'denom_out': 'ujuno', 'id': 1, 'sender': 'B'}}
+INFO     root:mp_gamm.py:374 {'tag': 'UpdatePool', 'value': {'deltas': {'uatom': 11111111111111111111, 'ujuno': -11111111111111111110}}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm swap-exact-amount-in 11111111111111111111uatom 11111111111111111110 --swap-route-pool-ids 1 --swap-route-denoms ujuno --from B --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-5/test_scenarios_scenario190/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+ERROR    root:mp_gamm.py:426 	(Code 111222) recovered: base must be greater than 0
+stack:
+goroutine 248 [running]:
+runtime/debug.Stack()
+	runtime/debug/stack.go:24 +0x65
+github.com/cosmos/cosmos-sdk/baseapp.newDefaultRecoveryMiddleware.func1({0x1c8ea60, 0xc00360beb0})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:71 +0x27
+github.com/cosmos/cosmos-sdk/baseapp.newRecoveryMiddleware.func1({0x1c8ea60?, 0xc00360beb0?})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:39 +0x30
+github.com/cosmos/cosmos-sdk/baseapp.processRecovery({0x1c8ea60, 0xc00360beb0}, 0xc003e84000?)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:28 +0x37
+github.com/cosmos/cosmos-sdk/baseapp.processRecovery({0x1c8ea60, 0xc00360beb0}, 0x25ceee0?)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:33 +0x5e
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).runTx.func1()
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/baseapp.go:610 +0xf0
+panic({0x1c8ea60, 0xc00360beb0})
+	runtime/panic.go:884 +0x212
+github.com/osmosis-labs/osmosis/v12/osmomath.Pow({0xc00367ea80?}, {0x232dcd0?})
+	github.com/osmosis-labs/osmosis/v12/osmomath/math.go:59 +0x165
+github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer.solveConstantFunctionInvariant({0xc00363f680?}, {0x0?}, {0x1?}, {0xc00367e8c0?}, {0xc00367e8e0?})
+	github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer/amm.go:108 +0x6f
+github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer.Pool.CalcOutAmtGivenIn({{0xc00363f680, 0x3f}, 0x1, {{0xc00367e8c0}, {0xc00367e8e0}, 0x0}, {0x0, 0x0}, {{0xc00364cdf0, 0xb}, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer/pool.go:501 +0x345
+github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer.(*Pool).SwapOutAmtGivenIn(_, {{0x25bce90, 0xc003672d50}, {0x25ceee0, 0xc003674d40}, {{0xb, 0x0}, {0xc003d667c0, 0x7}, 0xe, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer/pool.go:527 +0xf6
+github.com/osmosis-labs/osmosis/v12/x/gamm/keeper.Keeper.swapExactAmountIn({{0x25a4fb0, 0xc000e755d0}, {0x25ccd40, 0xc00053b970}, {{0x25ccd40, 0xc00053b970}, 0xc00028e180, {0x25a4fb0, 0xc000e75530}, {0x25a5000, ...}, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/keeper/swap.go:55 +0x166
+github.com/osmosis-labs/osmosis/v12/x/gamm/keeper.Keeper.MultihopSwapExactAmountIn({{0x25a4fb0, 0xc000e755d0}, {0x25ccd40, 0xc00053b970}, {{0x25ccd40, 0xc00053b970}, 0xc00028e180, {0x25a4fb0, 0xc000e75530}, {0x25a5000, ...}, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/keeper/multihop.go:39 +0x610
+github.com/osmosis-labs/osmosis/v12/x/gamm/keeper.msgServer.SwapExactAmountIn({0x413445?}, {0x25bce90?, 0xc003e80600?}, 0xc00362c820)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/keeper/msg_server.go:168 +0x209
+github.com/osmosis-labs/osmosis/v12/x/gamm/types._Msg_SwapExactAmountIn_Handler.func1({0x25bce90, 0xc003e80600}, {0x1efe8e0?, 0xc00362c820})
+	github.com/osmosis-labs/osmosis/v12/x/gamm/types/tx.pb.go:1242 +0x78
+github.com/cosmos/cosmos-sdk/baseapp.(*MsgServiceRouter).RegisterService.func2.1({0x25bce90, 0xc003e805d0}, {0x4c3666?, 0x412e8b?}, 0x1f3ee60?, 0xc00365cde0)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/msg_service_router.go:113 +0xd2
+github.com/osmosis-labs/osmosis/v12/x/gamm/types._Msg_SwapExactAmountIn_Handler({0x1e2fee0?, 0xc00028e638}, {0x25bce90, 0xc003e805d0}, 0x232dac0, 0xc00367e800)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/types/tx.pb.go:1244 +0x138
+github.com/cosmos/cosmos-sdk/baseapp.(*MsgServiceRouter).RegisterService.func2({{0x25bce90, 0xc003672d50}, {0x25ceee0, 0xc003674d40}, {{0xb, 0x0}, {0xc003d667c0, 0x7}, 0xe, {0xd8ccdad, ...}, ...}, ...}, ...)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/msg_service_router.go:117 +0x2f3
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).runMsgs(_, {{0x25bce90, 0xc003672d50}, {0x25ceee0, 0xc003674d40}, {{0xb, 0x0}, {0xc003d667c0, 0x7}, 0xe, ...}, ...}, ...)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/baseapp.go:738 +0x5a5
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).runTx(0xc0000db080, 0x3, {0xc005507900, 0x13b, 0x13b})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/baseapp.go:695 +0xbc5
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).DeliverTx(0xc0000db080, {{0xc005507900?, 0x20?, 0xc003d54920?}})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/abci.go:306 +0x193
+github.com/tendermint/tendermint/abci/client.(*localClient).DeliverTxAsync(0xc000123740, {{0xc005507900?, 0x0?, 0xc000123740?}})
+	github.com/tendermint/tendermint@v0.34.21/abci/client/local_client.go:93 +0x105
+github.com/tendermint/tendermint/proxy.(*appConnConsensus).DeliverTxAsync(0xc0036344a0?, {{0xc005507900?, 0x20?, 0xb?}})
+	github.com/tendermint/tendermint@v0.34.21/proxy/app_conn.go:85 +0x26
+github.com/tendermint/tendermint/state.execBlockOnProxyApp({0x25be160?, 0xc001080900}, {0x25c5c40, 0xc0007436d0}, 0xc0000e9a40, {0x25ce368, 0xc000134750}, 0xd?)
+	github.com/tendermint/tendermint@v0.34.21/state/execution.go:320 +0x847
+github.com/tendermint/tendermint/state.(*BlockExecutor).ApplyBlock(_, {{{0xb, 0x0}, {0xc001224cd0, 0x7}}, {0xc001224cd7, 0x7}, 0x1, 0xd, {{0xc0030d7820, ...}, ...}, ...}, ...)
+	github.com/tendermint/tendermint@v0.34.21/state/execution.go:140 +0x171
+github.com/tendermint/tendermint/consensus.(*State).finalizeCommit(0xc0010b0a80, 0xe)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1659 +0xafd
+github.com/tendermint/tendermint/consensus.(*State).tryFinalizeCommit(0xc0010b0a80, 0xe)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1568 +0x2ff
+github.com/tendermint/tendermint/consensus.(*State).enterCommit.func1()
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1503 +0x94
+github.com/tendermint/tendermint/consensus.(*State).enterCommit(0xc0010b0a80, 0xe, 0x0)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1541 +0xccf
+github.com/tendermint/tendermint/consensus.(*State).addVote(0xc0010b0a80, 0xc003605220, {0xc000750270, 0x28})
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:2155 +0x18dc
+github.com/tendermint/tendermint/consensus.(*State).tryAddVote(0xc0010b0a80, 0xc003605220, {0xc000750270?, 0xc003624200?})
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1953 +0x2c
+github.com/tendermint/tendermint/consensus.(*State).handleMsg(0xc0010b0a80, {{0x259fd40?, 0xc0030f9528?}, {0xc000750270?, 0x0?}})
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:856 +0x170
+github.com/tendermint/tendermint/consensus.(*State).receiveRoutine(0xc0010b0a80, 0x0)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:763 +0x3f9
+created by github.com/tendermint/tendermint/consensus.(*State).OnStart
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:379 +0x12d
+: panic
+INFO     root:mp_gamm.py:304 [Step]: exit pool
+INFO     root:mp_gamm.py:307 {'tag': 'ExitPool', 'value': {'id': 1, 'sender': 'C', 'share': 1}}
+INFO     root:mp_gamm.py:308 {'tag': 'UpdatePool', 'value': {'deltas': {'uatom': 0, 'ujuno': 0}}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm exit-pool --min-amounts-out 0uatom --min-amounts-out 0ujuno --share-amount-in 1 --pool-id 1 --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-5/test_scenarios_scenario190/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+INFO     root:mp_gamm.py:101 	[Pool status]: {'@type': '/osmosis.gamm.v1beta1.Pool', 'address': 'osmo1mw0ac6rwlp5r8wapwk3zs6g29h8fcscxqakdzw9emkne6c8wjp9q0t3v8t', 'id': '1', 'pool_params': {'swap_fee': '0.000000000000000000', 'exit_fee': '0.000000000000000000', 'smooth_weight_change_params': None}, 'future_pool_governor': '', 'total_shares': {'denom': 'gamm/pool/1', 'amount': '99999999999999999999'}, 'pool_assets': [{'token': {'denom': 'uatom', 'amount': '2'}, 'weight': '1073741824'}, {'token': {'denom': 'ujuno', 'amount': '50000000000000000000'}, 'weight': '1073741824'}], 'total_weight': '2147483648'}
+INFO     root:mp_gamm.py:350 {'amounts': {'uatom': 11111111111111111112, 'ujuno': 1}, 'exit_fee': 0, 'id': 1, 'share': 22222222222222222221, 'swap_fee': 0, 'weights': {'uatom': 1, 'ujuno': 1}}
+INFO     root:mp_gamm.py:437 [Step]: swap out amount
+INFO     root:mp_gamm.py:440 Old balance of B: [{'denom': 'uatom', 'amount': '50000000000000000000'}, {'denom': 'ujuno', 'amount': '50000000000000000000'}, {'denom': 'uosmo', 'amount': '50000000000000000000'}]
+INFO     root:mp_gamm.py:445 {'tag': 'SwapOutAmount', 'value': {'amount_out': 11111111111111111111, 'denom_in': 'ujuno', 'denom_out': 'uatom', 'id': 1, 'sender': 'B'}}
+INFO     root:mp_gamm.py:446 {'tag': 'UpdatePool', 'value': {'deltas': {'uatom': -11111111111111111111, 'ujuno': 11111111111111111111}}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm swap-exact-amount-out 11111111111111111111uatom 11111111111111111111 --swap-route-pool-ids 1 --swap-route-denoms ujuno --from B --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-5/test_scenarios_scenario190/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+ERROR    root:mp_gamm.py:497 	(Code 111222) recovered: base must be greater than 0
+stack:
+goroutine 248 [running]:
+runtime/debug.Stack()
+	runtime/debug/stack.go:24 +0x65
+github.com/cosmos/cosmos-sdk/baseapp.newDefaultRecoveryMiddleware.func1({0x1c8ea60, 0xc0046dcc10})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:71 +0x27
+github.com/cosmos/cosmos-sdk/baseapp.newRecoveryMiddleware.func1({0x1c8ea60?, 0xc0046dcc10?})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:39 +0x30
+github.com/cosmos/cosmos-sdk/baseapp.processRecovery({0x1c8ea60, 0xc0046dcc10}, 0xc0046f1200?)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:28 +0x37
+github.com/cosmos/cosmos-sdk/baseapp.processRecovery({0x1c8ea60, 0xc0046dcc10}, 0x25ceee0?)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/recovery.go:33 +0x5e
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).runTx.func1()
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/baseapp.go:610 +0xf0
+panic({0x1c8ea60, 0xc0046dcc10})
+	runtime/panic.go:884 +0x212
+github.com/osmosis-labs/osmosis/v12/osmomath.Pow({0xc0046fd480?}, {0x232dcd0?})
+	github.com/osmosis-labs/osmosis/v12/osmomath/math.go:59 +0x165
+github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer.solveConstantFunctionInvariant({0xc0046d2c40?}, {0x0?}, {0x1?}, {0xc0046fd300?}, {0xc0046fd320?})
+	github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer/amm.go:108 +0x6f
+github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer.Pool.CalcInAmtGivenOut({{0xc0046d2c40, 0x3f}, 0x1, {{0xc0046fd300}, {0xc0046fd320}, 0x0}, {0x0, 0x0}, {{0xc0046fa110, 0xb}, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/pool-models/balancer/pool.go:554 +0x16d
+github.com/osmosis-labs/osmosis/v12/x/gamm/keeper.Keeper.createMultihopExpectedSwapOuts({{0x25a4fb0, 0xc000e755d0}, {0x25ccd40, 0xc00053b970}, {{0x25ccd40, 0xc00053b970}, 0xc00028e180, {0x25a4fb0, 0xc000e75530}, {0x25a5000, ...}, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/keeper/multihop.go:131 +0x2d1
+github.com/osmosis-labs/osmosis/v12/x/gamm/keeper.Keeper.MultihopSwapExactAmountOut({{0x25a4fb0, 0xc000e755d0}, {0x25ccd40, 0xc00053b970}, {{0x25ccd40, 0xc00053b970}, 0xc00028e180, {0x25a4fb0, 0xc000e75530}, {0x25a5000, ...}, ...}, ...}, ...)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/keeper/multihop.go:68 +0x445
+github.com/osmosis-labs/osmosis/v12/x/gamm/keeper.msgServer.SwapExactAmountOut({0x413445?}, {0x25bce90?, 0xc004a86930?}, 0xc0046c06e0)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/keeper/msg_server.go:193 +0x219
+github.com/osmosis-labs/osmosis/v12/x/gamm/types._Msg_SwapExactAmountOut_Handler.func1({0x25bce90, 0xc004a86930}, {0x1efeac0?, 0xc0046c06e0})
+	github.com/osmosis-labs/osmosis/v12/x/gamm/types/tx.pb.go:1260 +0x78
+github.com/cosmos/cosmos-sdk/baseapp.(*MsgServiceRouter).RegisterService.func2.1({0x25bce90, 0xc004a86900}, {0x4c3666?, 0x412e8b?}, 0x1f3ee60?, 0xc0046f2768)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/msg_service_router.go:113 +0xd2
+github.com/osmosis-labs/osmosis/v12/x/gamm/types._Msg_SwapExactAmountOut_Handler({0x1e2fee0?, 0xc00028e638}, {0x25bce90, 0xc004a86900}, 0x232dac0, 0xc0046fd260)
+	github.com/osmosis-labs/osmosis/v12/x/gamm/types/tx.pb.go:1262 +0x138
+github.com/cosmos/cosmos-sdk/baseapp.(*MsgServiceRouter).RegisterService.func2({{0x25bce90, 0xc0046f5080}, {0x25ceee0, 0xc004a8a080}, {{0xb, 0x0}, {0xc0047a62b9, 0x7}, 0x13, {0xd8ccdad, ...}, ...}, ...}, ...)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/msg_service_router.go:117 +0x2f3
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).runMsgs(_, {{0x25bce90, 0xc0046f5080}, {0x25ceee0, 0xc004a8a080}, {{0xb, 0x0}, {0xc0047a62b9, 0x7}, 0x13, ...}, ...}, ...)
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/baseapp.go:738 +0x5a5
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).runTx(0xc0000db080, 0x3, {0xc00413edc0, 0x13e, 0x13e})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/baseapp.go:695 +0xbc5
+github.com/cosmos/cosmos-sdk/baseapp.(*BaseApp).DeliverTx(0xc0000db080, {{0xc00413edc0?, 0x20?, 0xc004789660?}})
+	github.com/cosmos/cosmos-sdk@v0.46.1/baseapp/abci.go:306 +0x193
+github.com/tendermint/tendermint/abci/client.(*localClient).DeliverTxAsync(0xc000123740, {{0xc00413edc0?, 0x0?, 0xc000123740?}})
+	github.com/tendermint/tendermint@v0.34.21/abci/client/local_client.go:93 +0x105
+github.com/tendermint/tendermint/proxy.(*appConnConsensus).DeliverTxAsync(0xc0046bae20?, {{0xc00413edc0?, 0x20?, 0xb?}})
+	github.com/tendermint/tendermint@v0.34.21/proxy/app_conn.go:85 +0x26
+github.com/tendermint/tendermint/state.execBlockOnProxyApp({0x25be160?, 0xc001080900}, {0x25c5c40, 0xc0007436d0}, 0xc00107eb40, {0x25ce368, 0xc000134750}, 0x12?)
+	github.com/tendermint/tendermint@v0.34.21/state/execution.go:320 +0x847
+github.com/tendermint/tendermint/state.(*BlockExecutor).ApplyBlock(_, {{{0xb, 0x0}, {0xc001224cd0, 0x7}}, {0xc001224cd7, 0x7}, 0x1, 0x12, {{0xc004189e20, ...}, ...}, ...}, ...)
+	github.com/tendermint/tendermint@v0.34.21/state/execution.go:140 +0x171
+github.com/tendermint/tendermint/consensus.(*State).finalizeCommit(0xc0010b0a80, 0x13)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1659 +0xafd
+github.com/tendermint/tendermint/consensus.(*State).tryFinalizeCommit(0xc0010b0a80, 0x13)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1568 +0x2ff
+github.com/tendermint/tendermint/consensus.(*State).enterCommit.func1()
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1503 +0x94
+github.com/tendermint/tendermint/consensus.(*State).enterCommit(0xc0010b0a80, 0x13, 0x0)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1541 +0xccf
+github.com/tendermint/tendermint/consensus.(*State).addVote(0xc0010b0a80, 0xc0036cb680, {0xc000296690, 0x28})
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:2155 +0x18dc
+github.com/tendermint/tendermint/consensus.(*State).tryAddVote(0xc0010b0a80, 0xc0036cb680, {0xc000296690?, 0xc001759b00?})
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:1953 +0x2c
+github.com/tendermint/tendermint/consensus.(*State).handleMsg(0xc0010b0a80, {{0x259fd40?, 0xc00469c278?}, {0xc000296690?, 0x0?}})
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:856 +0x170
+github.com/tendermint/tendermint/consensus.(*State).receiveRoutine(0xc0010b0a80, 0x0)
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:763 +0x3f9
+created by github.com/tendermint/tendermint/consensus.(*State).OnStart
+	github.com/tendermint/tendermint@v0.34.21/consensus/state.go:379 +0x12d
+: panic
+INFO     root:mp_gamm.py:365 [Step]: swap in amount
+INFO     root:mp_gamm.py:368 Old balance of A: [{'denom': 'uatom', 'amount': '50000000000000000000'}, {'denom': 'ujuno', 'amount': '50000000000000000000'}, {'denom': 'uosmo', 'amount': '50000000000000000000'}]
+INFO     root:mp_gamm.py:373 {'tag': 'SwapInAmount', 'value': {'amount_in': 4, 'denom_in': 'uatom', 'denom_out': 'ujuno', 'id': 1, 'sender': 'A'}}
+INFO     root:mp_gamm.py:374 {'tag': 'UpdatePool', 'value': {'deltas': {'uatom': 4, 'ujuno': -8888888888888888889}}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm swap-exact-amount-in 4uatom 8888888888888888889 --swap-route-pool-ids 1 --swap-route-denoms ujuno --from A --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-5/test_scenarios_scenario190/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+INFO     root:mp_gamm.py:101 	[Pool status]: {'@type': '/osmosis.gamm.v1beta1.Pool', 'address': 'osmo1mw0ac6rwlp5r8wapwk3zs6g29h8fcscxqakdzw9emkne6c8wjp9q0t3v8t', 'id': '1', 'pool_params': {'swap_fee': '0.000000000000000000', 'exit_fee': '0.000000000000000000', 'smooth_weight_change_params': None}, 'future_pool_governor': '', 'total_shares': {'denom': 'gamm/pool/1', 'amount': '99999999999999999999'}, 'pool_assets': [{'token': {'denom': 'uatom', 'amount': '6'}, 'weight': '1073741824'}, {'token': {'denom': 'ujuno', 'amount': '16666666666666666650'}, 'weight': '1073741824'}], 'total_weight': '2147483648'}
+INFO     root:mp_gamm.py:417 {'amounts': {'ujuno': 2222222222222222223, 'uatom': 5}, 'exit_fee': 0, 'id': 1, 'share': 22222222222222222221, 'swap_fee': 0, 'weights': {'uatom': 1, 'ujuno': 1}}
+INFO     root:mp_gamm.py:418 New balance of A: [{'denom': 'uatom', 'amount': '49999999999999999996'}, {'denom': 'ujuno', 'amount': '83333333333333333350'}, {'denom': 'uosmo', 'amount': '50000000000000000000'}]
+INFO     root:test_scenarios_scenario19.py:10 Successfully executed trace traces/scenarios/scenario19.itf.json

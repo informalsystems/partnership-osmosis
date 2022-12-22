@@ -1,0 +1,27 @@
+INFO     root:mp_gamm.py:118 [Step]: init
+INFO     root:mp_gamm.py:126 	[Status]: Testnet launched...
+
+INFO     root:mp_gamm.py:157 [Step]: create pool
+INFO     root:mp_gamm.py:186 {'tag': 'CreatePool', 'value': {'amounts': {'uatom': 2, 'ujuno': 50000000000000000000}, 'sender': 'C', 'weights': {'uatom': 1, 'ujuno': 1}}}
+INFO     root:mp_gamm.py:187 {'tag': 'CreatePool', 'value': {'id': 1}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm create-pool --pool-file /tmp/pytest-of-mirel/pytest-8/test_scenarios_scenario180/osmosisd/pool-files/pool-file-config.json --from C --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-8/test_scenarios_scenario180/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+INFO     root:mp_gamm.py:101 	[Pool status]: {'@type': '/osmosis.gamm.v1beta1.Pool', 'address': 'osmo1mw0ac6rwlp5r8wapwk3zs6g29h8fcscxqakdzw9emkne6c8wjp9q0t3v8t', 'id': '1', 'pool_params': {'swap_fee': '0.000000000000000000', 'exit_fee': '0.000000000000000000', 'smooth_weight_change_params': None}, 'future_pool_governor': '', 'total_shares': {'denom': 'gamm/pool/1', 'amount': '100000000000000000000'}, 'pool_assets': [{'token': {'denom': 'uatom', 'amount': '2'}, 'weight': '1073741824'}, {'token': {'denom': 'ujuno', 'amount': '50000000000000000000'}, 'weight': '1073741824'}], 'total_weight': '2147483648'}
+INFO     root:mp_gamm.py:228 {'amounts': {'uatom': 2, 'ujuno': 50000000000000000000}, 'exit_fee': 0, 'id': 1, 'share': 100000000000000000000, 'swap_fee': 0, 'weights': {'uatom': 1, 'ujuno': 1}}
+INFO     root:mp_gamm.py:157 [Step]: create pool
+INFO     root:mp_gamm.py:186 {'tag': 'CreatePool', 'value': {'amounts': {'uosmo': 1, 'ujuno': 1}, 'sender': 'A', 'weights': {'uosmo': 1, 'ujuno': 1}}}
+INFO     root:mp_gamm.py:187 {'tag': 'CreatePool', 'value': {'id': 2}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm create-pool --pool-file /tmp/pytest-of-mirel/pytest-8/test_scenarios_scenario180/osmosisd/pool-files/pool-file-config.json --from A --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-8/test_scenarios_scenario180/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+INFO     root:mp_gamm.py:101 	[Pool status]: {'@type': '/osmosis.gamm.v1beta1.Pool', 'address': 'osmo1500hy75krs9e8t50aav6fahk8sxhajn9ctp40qwvvn8tcprkk6wszun4a5', 'id': '2', 'pool_params': {'swap_fee': '0.000000000000000000', 'exit_fee': '0.000000000000000000', 'smooth_weight_change_params': None}, 'future_pool_governor': '', 'total_shares': {'denom': 'gamm/pool/2', 'amount': '100000000000000000000'}, 'pool_assets': [{'token': {'denom': 'ujuno', 'amount': '1'}, 'weight': '1073741824'}, {'token': {'denom': 'uosmo', 'amount': '1'}, 'weight': '1073741824'}], 'total_weight': '2147483648'}
+INFO     root:mp_gamm.py:228 {'amounts': {'uosmo': 1, 'ujuno': 1}, 'exit_fee': 0, 'id': 2, 'share': 100000000000000000000, 'swap_fee': 0, 'weights': {'uosmo': 1, 'ujuno': 1}}
+INFO     root:mp_gamm.py:243 [Step]: join pool
+INFO     root:mp_gamm.py:246 {'tag': 'JoinPool', 'value': {'id': 2, 'sender': 'B', 'share': 100000000000000000001}}
+INFO     root:mp_gamm.py:247 {'tag': 'UpdatePool', 'value': {'deltas': {'uosmo': 2, 'ujuno': 2}}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm join-pool --max-amounts-in 2uosmo --max-amounts-in 2ujuno --share-amount-out 100000000000000000001 --pool-id 2 --from B --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-8/test_scenarios_scenario180/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+INFO     root:mp_gamm.py:101 	[Pool status]: {'@type': '/osmosis.gamm.v1beta1.Pool', 'address': 'osmo1500hy75krs9e8t50aav6fahk8sxhajn9ctp40qwvvn8tcprkk6wszun4a5', 'id': '2', 'pool_params': {'swap_fee': '0.000000000000000000', 'exit_fee': '0.000000000000000000', 'smooth_weight_change_params': None}, 'future_pool_governor': '', 'total_shares': {'denom': 'gamm/pool/2', 'amount': '200000000000000000000'}, 'pool_assets': [{'token': {'denom': 'ujuno', 'amount': '2'}, 'weight': '1073741824'}, {'token': {'denom': 'uosmo', 'amount': '2'}, 'weight': '1073741824'}], 'total_weight': '2147483648'}
+INFO     root:mp_gamm.py:289 {'amounts': {'uosmo': 3, 'ujuno': 3}, 'exit_fee': 0, 'id': 2, 'share': 200000000000000000001, 'swap_fee': 0, 'weights': {'uosmo': 1, 'ujuno': 1}}
+INFO     root:mp_gamm.py:243 [Step]: join pool
+INFO     root:mp_gamm.py:246 {'tag': 'JoinPool', 'value': {'id': 2, 'sender': 'B', 'share': 3333333333333333333216666666666666666666}}
+INFO     root:mp_gamm.py:247 {'tag': 'UpdatePool', 'value': {'deltas': {'uosmo': 49999999999999999998, 'ujuno': 49999999999999999998}}}
+INFO     root:mp_gamm.py:105 	[Tx CMD]: osmosis/build/osmosisd tx gamm join-pool --max-amounts-in 49999999999999999998uosmo --max-amounts-in 49999999999999999998ujuno --share-amount-out 3333333333333333333216666666666666666666 --pool-id 2 --from B --broadcast-mode block --gas 500000 -y --keyring-backend test --home /tmp/pytest-of-mirel/pytest-8/test_scenarios_scenario180/osmosisd --chain-id osmosis --node tcp://127.0.0.1:26657 --output json 
+ERROR    root:mp_gamm.py:293 	(Code 1) failed to execute message; message index: 0: unexpected error in MaximalExactRatioJoin
+INFO     root:test_scenarios_scenario18.py:10 Successfully executed trace traces/scenarios/scenario18.itf.json

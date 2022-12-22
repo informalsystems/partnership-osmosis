@@ -13,3 +13,9 @@
 [submodule "2022/Q4/artifacts/StableSwap/osmosis"]
 	path = 2022/Q4/artifacts/StableSwap/osmosis
 	url = https://github.com/osmosis-labs/osmosis.git
+[submodule "2022/Q4/osmosis-atomkraft/OsmosisAtomkraft"]
+	path = 2022/Q4/osmosis-atomkraft/OsmosisAtomkraft
+	url = https://github.com/informalsystems/OsmosisAtomkraft.git
+[submodule "2022/Q4/atomkraft-osmosis/OsmosisAtomkraft"]
+	path = 2022/Q4/atomkraft-osmosis/OsmosisAtomkraft
+	url = git@github.com:informalsystems/OsmosisAtomkraft.git
