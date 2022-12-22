@@ -33,7 +33,11 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 - ValidateFutureGovernor() needs some polishing [#3664](https://github.com/osmosis-labs/osmosis/issues/3664)
 - JoinPoolNoSwap contains diff in calculation of the expected shares out and calculated shares out [#3705](https://github.com/osmosis-labs/osmosis/issues/3705)
 - GAMM module and balancer pool model spec improvements [#3706](https://github.com/osmosis-labs/osmosis/issues/3706)
-
+- Atomkraft findings:
+  - x/gamm: Exiting balancer pool with zero assets and low share [#3828](https://github.com/osmosis-labs/osmosis/issues/3828)
+  - x/gamm: Panics in SwapExactAmountOut and SwapExactAmountIn for balancer pool[#3829](https://github.com/osmosis-labs/osmosis/issues/3829)
+  - x/gamm: Panic “division by zero” in SwapExactAmountOut for balancer pool [#3831](https://github.com/osmosis-labs/osmosis/issues/3831)
+  - x/gamm: Unexpected error in MaximalExactRatioJoin for balancer JoinPoolNoSwap [#3834](https://github.com/osmosis-labs/osmosis/issues/3834)
  
 
  
