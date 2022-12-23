@@ -41,6 +41,7 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 - GAMM module and pool models' spec improvements [#3706](https://github.com/osmosis-labs/osmosis/issues/3706)
 - x/gamm: define gas fee for stableswap pool swap computations [#3837](https://github.com/osmosis-labs/osmosis/issues/3837)
 - GAMM: Suggestions for improving code structure [#3841](https://github.com/osmosis-labs/osmosis/issues/3841)  
+- x/gamm unit test coverage could be improved [#3849](https://github.com/osmosis-labs/osmosis/issues/3849)
 
 - Atomkraft findings:
   - x/gamm: Exiting balancer pool with zero assets and low share [#3828](https://github.com/osmosis-labs/osmosis/issues/3828)
