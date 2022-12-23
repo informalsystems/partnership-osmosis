@@ -11,7 +11,7 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
 
 #  Deliverables:
 
- ## PRs: ##
+ ## PRs ##
  
 **TWAP module**
  - TWAP spec and code comments improvements [#3216](https://github.com/osmosis-labs/osmosis/pull/3216)
@@ -26,16 +26,19 @@ MoMs of the sync meetings are found in the folder: [SyncMoMs](https://github.com
  **GAMM module & Stableswap style pools**
  -  Gamm stableswap improvements [#3839](https://github.com/osmosis-labs/osmosis/pull/3839)
  
- 
-**TLA Spec for GAMM module**
+ ## TLA Spec for GAMM module ##
+
 - TLA spec is created for balancer pool model type and it is modeling CreatePool, JoinPool, ExitPool and SwapExactAmountOut and SwapExactAmountIn transactions.
 - Specification is located under [models folder](https://github.com/informalsystems/OsmosisAtomkraft/tree/0f1363ce2dd3eca7b77e8fd09977741d4258056e/models) in osmosis-atomkraft submodule pointing to OsmosisAtomkraft version used during auditing of GAMM module.
 
- 
-**Osmosis Atomkraft**
-- OsmosisAtomkraft is Informal Systems' in house build tool used during audits to help auditors find issues with generating and executing large number of apalache traces that could be executed on running chain. For more details check out our [atomkraft](https://github.com/informalsystems/atomkraft) repository and documentation.
+ ## Osmosis Atomkraft ##
 
-**Issues** reported on Osmosis Lab github repositories:
+- [Osmosis atomkraft](https://github.com/informalsystems/OsmosisAtomkraft) is adapted Informal Systems' in house build tool used during audits to help auditors find issues with generating and executing large number of apalache traces that could be executed on running chain. For more details check out our [atomkraft](https://github.com/informalsystems/atomkraft) repository and documentation.
+
+
+ ## Issues ##
+
+Issues reported on Osmosis Lab github repositories:
 - ValidateFutureGovernor() needs some polishing [#3664](https://github.com/osmosis-labs/osmosis/issues/3664)
 - JoinPoolNoSwap contains diff in calculation of the expected shares out and calculated shares out [#3705](https://github.com/osmosis-labs/osmosis/issues/3705)
 - GAMM module and pool models' spec improvements [#3706](https://github.com/osmosis-labs/osmosis/issues/3706)
